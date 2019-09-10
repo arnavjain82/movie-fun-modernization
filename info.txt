@@ -1,0 +1,44 @@
+commented out the     //compile project(":components:movies") in build.gradle for movie-fun-app folder
+
+./gradlew applications:movie-fun-app:bootrun
+
+created table as well under mysql movies database:
+CREATE TABLE album_scheduler_task (started_at TIMESTAMP NULL DEFAULT NULL);
+
+INSERT INTO album_scheduler_task (started_at) VALUES (NULL);
+
+minio server ~/shared/
+
+export MINIO_ACCESS_KEY=SQYLN4A9CPKBM62ESOUO
+export MINIO_SECRET_ACCESS_KEY=speeNsVigz2lZsw6ayCeqaxlkXK3MWTsz0zCvN4I
+export S3_ENDPOINTURL=http://127.0.0.1:9000
+export VCAP_SERVICES='{"user-provided": [{"credentials": {"access_key_id": "${MINIO_ACCESS_KEY:?missing}", "bucket": "moviefun", "secret_access_key": "${MINIO_SECRET_ACCESS_KEY:?missing}", "endpoint": "http://127.0.0.1:9000"}, "name": "photo-storage"}]}'
+export APPLICATION_OAUTH_ENABLED=false
+
+export EUREKA_CLIENT_ENABLED=false
+export RIBBON_EUREKA_ENABLED=false
+
+export ALBUM_SERVICE_RIBBON_LISTOFSERVERS=http://localhost:8081
+export MOVIE_SERVICE_RIBBON_LISTOFSERVERS=http://localhost:8082
+
+export MOVIES_PAGESIZE=6
+
+export VCAP_SERVICES='{"user-provided": [{"credentials": {"access_key_id": "SQYLN4A9CPKBM62ESOUO", "bucket": "moviefun", "secret_access_key": "speeNsVigz2lZsw6ayCeqaxlkXK3MWTsz0zCvN4I", "endpoint": "http://192.168.10.133:9000"}, "name": "photo-storage"}]}'
+
+
+https://github.com/platform-acceleration-lab
+
+
+smoke test:
+
+run the app: ./gradlew bootrun
+
+then build war in separate window: ./gradlew build
+
+cf mysql movies-database; <-- plugin to create db for mysql instance movies-database
+
+
+
+
+
+
