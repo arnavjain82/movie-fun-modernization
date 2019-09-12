@@ -54,6 +54,7 @@
       </a> <a class="brand" href="#">Moviefun</a>
 
       <form class="navbar-form pull-right">
+          <sec:csrfInput />
         <select name="field">
           <option value="title">Title</option>
           <option value="director">Director</option>
