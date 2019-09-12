@@ -20,3 +20,7 @@ Note:
 
 Flyway migration creates a table with name flyway_schema_history that gives details of the past migration.
 
+build.gradle under database (both for movie/album) Line 31 --> giving 5 sec only but if there are internet issues - can give you timed out error so incrase this time 
+
+  sleep 5_000L -->   sleep 30_000L
+  
