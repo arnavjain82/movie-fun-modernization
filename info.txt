@@ -15,3 +15,8 @@ jobs --> shows detaisl of the job running
 Kill %1 --> kills the first job
 
 bg - background jobs
+
+Note:
+
+Flyway migration creates a table with name flyway_migration_history that gives details of the past migration.
+
