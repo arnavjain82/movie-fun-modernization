@@ -1,0 +1,17 @@
+while runnign the migration getting some error as user doesn;t have acces
+
+so db.gradle creates service-key which is being used to create conenction  (pen tunnel) and run migration but somehow it was not working for the migration part for movies-database so
+we used cf-mqsql keys in db.gradle instead of flyway-migration-key
+
+Few good commands:
+
+./gradlew :da:mo:cfMigrate --> runs only migration for movies-database
+
+cf dsk movies-database flyway-migration-key --> delete service key
+
+cf csk movies-database flyway-migration-key --> creates service-key
+
+jobs --> shows detaisl of the job running
+Kill %1 --> kills the first job
+
+bg - background jobs
