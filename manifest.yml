@@ -15,7 +15,7 @@ applications:
     routes:
       - route: movie-service-neha.apps.evans.pal.pivotal.io
     services:
-      - movie-database
+      - movies-database
       - movie-fun-sso
     env:
       GRANT_TYPE: client_credentials
