@@ -18,5 +18,5 @@ bg - background jobs
 
 Note:
 
-Flyway migration creates a table with name flyway_migration_history that gives details of the past migration.
+Flyway migration creates a table with name flyway_schema_history that gives details of the past migration.
 
